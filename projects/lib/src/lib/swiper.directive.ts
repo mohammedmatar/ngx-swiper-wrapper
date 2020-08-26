@@ -224,23 +224,23 @@ export class SwiperDirective implements AfterViewInit, OnDestroy, DoCheck, OnCha
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (this.instance && changes['disabled']) {
-      if (changes['disabled'].currentValue !== changes['disabled'].previousValue) {
-        if (changes['disabled'].currentValue === true) {
-          this.zone.runOutsideAngular(() => {
-            this.ngOnDestroy();
-
-            this.ngAfterViewInit();
-          });
-        } else if (changes['disabled'].currentValue === false) {
-          this.zone.runOutsideAngular(() => {
-            this.ngOnDestroy();
-
-            this.ngAfterViewInit();
-          });
-        }
-      }
-    }
+    // if (this.instance && changes['disabled']) {
+    //   if (changes['disabled'].currentValue !== changes['disabled'].previousValue) {
+    //     if (changes['disabled'].currentValue === true) {
+    //       this.zone.runOutsideAngular(() => {
+    //         this.ngOnDestroy();
+    //
+    //         this.ngAfterViewInit();
+    //       });
+    //     } else if (changes['disabled'].currentValue === false) {
+    //       this.zone.runOutsideAngular(() => {
+    //         this.ngOnDestroy();
+    //
+    //         this.ngAfterViewInit();
+    //       });
+    //     }
+    //   }
+    // }
   }
 
   private emit(emitter: EventEmitter<any>, value: any): void {
